@@ -1,0 +1,21 @@
+<p>header works!</p>
+
+<div class="row mt-5" >
+    <div class="col-12" >
+        <div class="jumbotron pt-3 pb-3" >
+            <h3>
+                <div *ngIf="headerIcon; else elseTemplate"
+                >
+                <i [ngClass]="headerIcon"></i>
+
+                </div>
+                <ng-template #elseTemplate>
+                    <i class="fas fa-exclamation-circle"></i>
+                </ng-template>
+               
+                {{headerTitle}}</h3>
+            <p class="lead">{{headerDescription}}</p>
+            
+        </div>
+    </div>
+    </div>

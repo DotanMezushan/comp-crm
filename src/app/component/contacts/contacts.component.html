@@ -1,0 +1,45 @@
+<app-header
+[headerIcon]="headerIconParent"
+[headerTitle]="headerTitleParent"
+[headerDescription]="headerDescriptionParent"
+
+></app-header>
+
+<div class="row mt-3">
+    <div class="col-12">
+        <h3>Company Employee Table</h3>
+        <table  *ngIf="contacts?.length; else noContacts" 
+        class="table table-striped mt-3">
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Birthday</th>
+                <th>Phones</th>
+            </tr>
+        </thead>
+            <tbody >
+                <tr *ngFor="let contact of contacts">
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>{{contact.birthday}}</td>
+                    <td>
+                        <ng-container *ngIf="contact.phones?.length ;else  elsePhones">
+                        <ul>
+                            <li *ngFor="let p of contact.phones"> {{p}}</li> 
+                         </ul>
+                        </ng-container>
+                        <ng-template #elsePhones >
+                            <i>No phones numbers yet </i>
+                        </ng-template>
+                        
+                    </td>
+                </tr>
+            </tbody>
+
+        </table> 
+        <ng-template #noContacts>
+            <strong>there is no contacts yet</strong>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+<app-header
+[headerIcon]="headerIconParent"
+[headerTitle]="headerTitleParent"
+[headerDescription]="headerDescriptionParent"
+
+></app-header>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Birth day</th>
+        </tr>
+  
+    </thead>
+        <tbody>
+           
+            <tr [ngClass]="{'odd':isOdd,'even': isEven}" 
+            *ngFor=
+             "let customer of customersModel;
+             even as isEven;
+             odd as isOdd" >
+                <td>{{customer.name |nameFix |nameSuffix:customer.isGuy |uppercase}}</td>
+                <td [style.font-size.px]="customer.email.length">{{customer.email}}</td>
+                <td   [ngClass]="{
+                    'past': isAlreadyHaveBirthdayThisYear(customer.birthday),
+                    'future': !isAlreadyHaveBirthdayThisYear(customer.birthday)
+                }">{{customer.birthday |date :'MM/yyyy'}}</td>
+         
+            </tr>
+        </tbody>
+</table>
+
+
+<br/>
+<br/>
+<br/>
+
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col"> Is Guy</th>
+            <th scope="col">Birth day</th>
+            <th scope="col"> Is first</th>
+            <th scope="col"> Index</th> 
+            <th scope="col"> Total</th>
+            <th scope="col"> isLast</th>
+            <th scope="col"> isEven</th>
+            <th scope="col"> isOdd</th>
+
+        </tr>
+  
+    </thead>
+        <tbody>
+            <tr *ngFor= "let customer of customers; 
+            index as i;
+            first as isFirst; 
+             count as Count;
+             last as isLast;
+             even as isEven;
+             odd as isOdd">
+                <td>{{customer.name}}</td>
+                <td>{{customer.isGuy}}</td>
+                <td>{{customer.birthday.toLocaleDateString('en-US')}}</td>
+                 <td>{{isFirst}}</td>
+                <td>{{i}}</td>
+                <td>{{Count }}</td>
+                <td>{{isLast}}</td>
+                <td>{{isEven}}</td>
+                <td>{{isOdd}}</td>
+            </tr>
+        </tbody>
+</table>
+<br/>
+<br/>
+<br/>
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col"> Is Guy</th>
+            <th scope="col">Birth day</th>
+            <th scope="col"> Is first</th>
+            <th scope="col"> Index</th> 
+            <th scope="col"> Total</th>
+            <th scope="col"> isLast</th>
+            <th scope="col"> isEven</th>
+            <th scope="col"> isOdd</th>
+
+        </tr>
+  
+    </thead>
+        <tbody>
+            <tr *ngFor= "let customer of customers; 
+            index as i;
+            first as isFirst; 
+             count as Count;
+             last as isLast;
+             even as isEven;
+             odd as isOdd;
+             trackBy:trackByCustomersName">
+                <td>{{customer.name}}</td>
+                <td>{{customer.isGuy}}</td>
+                <td>{{customer.birthday.toLocaleDateString('en-US')}}</td>
+                 <td>{{isFirst}}</td>
+                <td>{{i}}</td>
+                <td>{{Count }}</td>
+                <td>{{isLast}}</td>
+                <td>{{isEven}}</td>
+                <td>{{isOdd}}</td>
+            </tr>
+        </tbody>
+</table>
+<br/>
+<br/>
+<button type="button" class="btn btn-secondary" 
+(click)="getCustomers()">Refresh</button> -->
