@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -11,6 +11,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from '../assets/header/header.component';
 import { NameFixPipe } from './pipes/name-fix.pipe';
 import { NameSuffixPipe } from './pipes/name-suffix.pipe';
+import {HttpClientModule} from '@angular/common/http';
+
+// const data = new InjectionToken<string>("injected data !");
+
+// class testService{
+//   sayHello(){
+//     console.log("Hello from " + this)
+//   }
+// }
+// function testServiceFactory(){
+//   return new testService();
+// }
+
+
 
 @NgModule({
   declarations: [
@@ -27,9 +41,19 @@ import { NameSuffixPipe } from './pipes/name-suffix.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    // {
+    //    provide:data,
+    //    useFactory:() => ""
+    // },
+    // { 
+    //   provide:testService,
+    //   useFactory:testServiceFactory
+    // }
+  ],
   bootstrap: [AppComponent],
   exports: [
     NameFixPipe,

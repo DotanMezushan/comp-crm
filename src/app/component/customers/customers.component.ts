@@ -8,57 +8,62 @@ import { CustomerModel } from 'src/app/model/CustomerModel';
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-  //customers :Customer [];
+  customers :Customer [];
   customersModel :CustomerModel[];
 
 
   constructor() {
-    //    this.customers =[
-    //   { name: 'DOTAN', 
-    //     isGuy:true, 
-    //     birthday: new Date(1985,3,25)
-    //   },
-    //   { name: 'KORAL', 
-    //   isGuy:false, 
-    //   birthday: new Date(1992,4,15)
-    //   },
-    //   { name: 'AVI', 
-    //   isGuy:true, 
-    //   birthday: new Date(1985,10,4)
-    //   }
+       this.customers =[
+      { name: 'DOTAN', 
+        isGuy:true, 
+        birthday: new Date(1985,3,25)
+      },
+      { name: 'KORAL', 
+      isGuy:false, 
+      birthday: new Date(1992,4,15)
+      },
+      { name: 'AVI', 
+      isGuy:true, 
+      birthday: new Date(1985,10,4)
+      }
     
-    // ];
+    ];
     this.customersModel=[
       { name: 'DOTAN', 
         email:"dotannnnnnnnn@gmail.com", 
-        birthday: new Date(1955,10,25),
+        birthday: new Date('1956,10,25'),
         isGuy:true,
       },
+      { name: 'THE Q SHIRA', 
+      email:"SHIRA@gmail.com", 
+      birthday: new Date('2001/9/7'),
+      isGuy:true,
+    },
        { name: 'AVI', 
         email:"AVI@gmail.com", 
-        birthday: new Date(1985,12,14),
+        birthday: new Date('1985/12/14'),
         isGuy:true,
       },
       { name: 'LULI', 
       email:"LULI@gmail.com", 
-      birthday: new Date(1991,12,12),
+      birthday: new Date('1991/12/12'),
       isGuy:false,
       },
         { name: 'DANA', 
         email:"DANAAA@gmail.com", 
-        birthday: new Date(1987,4,27),
+        birthday: new Date('1987/4/27'),
         isGuy:false,
       },
       { name: 'HELLI', 
       email:"H@gmail.com", 
-      birthday: new Date(1992,4,11),
+      birthday: new Date('1992/4/11'),
       isGuy:false,
      },
       { name: 'YRON', 
       email:"YRON@gmail.com", 
-      birthday: new Date(1995,3,7),
+      birthday: new Date('1995/3/7'),
       isGuy:true,
-      },
+      }
     ];
    }
 headerIconParent!:string;
@@ -105,7 +110,6 @@ headerDescriptionParent!:string;
       if( date.getMonth()!==currentDate.getMonth())
       return date.getMonth() < currentDate.getMonth();
       return (date.getDate() <= currentDate.getDate()); 
-      //we have problem angular added 1 month to everyone
   }
  
 
