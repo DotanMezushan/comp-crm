@@ -1,0 +1,37 @@
+[
+    { "name": "DOTAN", 
+    "email":"dotannnnhhhnnnnn@gmail.com", 
+    "birthday": "2012-01-08T18:25:43-05:00"   ,
+    "isGuy":"true"
+  },
+  { "name": "THE Q SHIRA", 
+  "email":"SHIRA@gmail.com", 
+  "birthday": "2012-09-21T18:25:43-05:00",
+  "isGuy":"true"
+},
+   { "name": "AVI", 
+    "email":"AVI@gmail.com", 
+    "birthday": "2012-10-29T18:25:43-05:00",
+    "isGuy":"true"
+  },
+  { "name": "LULI", 
+  "email":"LULI@gmail.com", 
+  "birthday": "1999-06-05T18:25:43-05:00",
+  "isGuy":"false"
+  },
+    { "name": "DANA", 
+    "email":"DANAAA@gmail.com", 
+    "birthday": "1990-06-06T18:25:43-05:00",
+    "isGuy":"false"
+  },
+  { "name": "HELLI", 
+  "email":"H@gmail.com", 
+  "birthday": "1990-03-03T18:25:43-05:00",
+  "isGuy":"false"
+ },
+  { "name": "YRON", 
+  "email":"YRON@gmail.com", 
+  "birthday": "1960-09-16T18:25:43-05:00",
+  "isGuy":"true"
+  }
+]

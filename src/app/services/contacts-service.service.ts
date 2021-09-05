@@ -18,44 +18,7 @@ export class ContactsServiceService {
   constructor(private http: HttpClient) {
       
    }
-  //   private contacts = [
-  //   {
-  //     name: 'Victor',
-  //     email: "tsanhan@gmail.com",
-  //     birthday: '25/03/1985',
-  //     phones:['0366555663']
-      
-  //   },
-  //   {
-  //     name: 'Dima',
-  //     email: "d_com@walla.com",
-  //     birthday: '25/01/1890'
-  //   },
-  //   {
-  //     name: 'Haim',
-  //     email: "haim_hamekach@gmail.com",
-  //     birthday: '15/09/1976'
-  //   },
-  //   {
-  //     email: "koralyehezkel@gmail.com",
-  //     name: 'Koral',
-  //     birthday: '03/05/1999',
-  //     phones:['0926653365','0426698805']
-  //   },
-  //   {
-  //     email: "dotanbm3052@gmail.com",
-  //     name: 'Dotan',
-  //     birthday: '08/01/1992',
-  //     phones:['0546511144']
-  //   }
-  // ];
-  
-//to do get and set and to make privet 
- 
- //public get Contacts() : ContactModel[] {
-   //return this.contacts;
 
- //}
 
  //one wat by promise and it work good!
 //  public get Contacts() : Promise<ContactModel[]>{

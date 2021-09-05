@@ -20,8 +20,8 @@
         </thead>
             <tbody >
                 <tr *ngFor="let contact of contacts">
-                    <td>{{contact.name}}</td>
-                    <td>{{contact.email}}</td>
+                    <td>{{contact.name |nameFix |uppercase}}</td>
+                    <td>{{contact.email }}</td>
                     <td>{{contact.birthday}}</td>
                     <td>
                         <ng-container *ngIf="contact.phones?.length ;else  elsePhones">
@@ -39,7 +39,9 @@
 
         </table> 
         <ng-template #noContacts>
-            <strong>there is no contacts yet</strong>
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
         </ng-template>
     </div>
 </div>

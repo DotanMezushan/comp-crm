@@ -9,7 +9,9 @@
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
+            <th scope="col">Is Guy</th>
             <th scope="col">Birth day</th>
+           
         </tr>
   
     </thead>
@@ -22,10 +24,12 @@
              odd as isOdd" >
                 <td>{{customer.name |nameFix |nameSuffix:customer.isGuy |uppercase}}</td>
                 <td [style.font-size.px]="customer.email.length">{{customer.email}}</td>
+                <td>{{customer.isGuy}}</td>
                 <td   [ngClass]="{
                     'past': isAlreadyHaveBirthdayThisYear(customer.birthday),
                     'future': !isAlreadyHaveBirthdayThisYear(customer.birthday)
                 }">{{customer.birthday |date :'MM/yyyy'}}</td>
+                
          
             </tr>
         </tbody>

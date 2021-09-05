@@ -9,17 +9,13 @@ import { ContactsServiceService } from 'src/app/services/contacts-service.servic
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
-  contacts!: Array< ContactModel>;
+contacts!: Array< ContactModel>;
 
 headerIconParent!:string;
 headerTitleParent!:string;
 headerDescriptionParent!:string;
 
-  constructor(private contactsServiceService :ContactsServiceService) {
-   
-
-
-   }
+  constructor(private contactsServiceService :ContactsServiceService) {}
 
   ngOnInit(): void {
     this.headerIconParent="fas fa-envelope";
@@ -34,7 +30,7 @@ headerDescriptionParent!:string;
     
     this.contactsServiceService.Contacts.subscribe({
       next: (result : ContactModel[]) => {
-        this.contacts=result;
+        this.contacts=( result);
       },
       error:(err: any) =>{
         console.log(err);

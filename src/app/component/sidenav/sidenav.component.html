@@ -1,11 +1,22 @@
 <ul style="height: 95vh;" class="nav flex-column pt-4 bg-success">
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link text-white" href="" routerLink="/customers"
        routerLinkActive="active" >
         <i class="fas fa-user"></i>
         <span class="ml-3">Customers</span>
       </a>
+    </li> -->
+
+    <li class="nav-item">
+      <div class="nav-link text-white"
+       (click)="goTo('customers')"
+       style="cursor: pointer">
+        <i class="fas fa-user"></i>
+        <span class="ml-3">Customers</span> </div>
     </li>
+      
+
+
     <li class="nav-item">
       <!-- <a class="nav-link text-white" href="" routerLink="/contacts"
       routerLinkActive="active">
