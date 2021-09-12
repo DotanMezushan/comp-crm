@@ -19,12 +19,13 @@
   </div>
   
 
-<!-- <table class="table">
+<table class="table">
     <thead>
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Is Guy</th>
+            <th scope="col">notes</th>
             <th scope="col">Birth day</th>
            
         </tr>
@@ -37,18 +38,17 @@
              "let customer of customersModel;
              even as isEven;
              odd as isOdd" >
-                <td>{{customer.name |nameFix |nameSuffix:customer.isGuy |uppercase}}</td>
+                <td>{{customer.firstName |nameFix |nameSuffix:customer.isGuy |uppercase}}</td>
                 <td [style.font-size.px]="customer.email.length">{{customer.email}}</td>
-                <td>{{customer.isGuy}}</td>
+                <td>{{customer.isGuy }}</td>
+                <td>{{customer.notes}}</td>
                 <td   [ngClass]="{
                     'past': isAlreadyHaveBirthdayThisYear(customer.birthday),
                     'future': !isAlreadyHaveBirthdayThisYear(customer.birthday)
-                }">{{customer.birthday |date :'MM/yyyy'}}</td>
-                
-         
+                }">{{customer.birthday |date :'MM/yyyy'}}</td>         
             </tr>
         </tbody>
-</table> -->
+</table>
 
 
 <br/>

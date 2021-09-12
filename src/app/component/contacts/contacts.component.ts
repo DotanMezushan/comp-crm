@@ -38,6 +38,22 @@ headerDescriptionParent!:string;
     });
     
     
+    
+  }
+  isMoreThanOnePhones( phones ?:string[]): boolean {
+    if (phones===undefined) {
+      return false
+    }
+     return phones.length>1
+  }
+  isAlreadyHaveBirthdayThisYear(dateString: string): boolean { 
+    const date= new Date(dateString);
+    console.log(date);
+    
+    const currentDate= new Date(Date.now()) ;
+      if( date.getMonth()!==currentDate.getMonth())
+      return date.getMonth() < currentDate.getMonth();
+      return (date.getDate() <= currentDate.getDate()); 
   }
 
 }

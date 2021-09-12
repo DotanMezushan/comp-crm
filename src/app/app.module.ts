@@ -14,6 +14,7 @@ import { NameSuffixPipe } from './pipes/name-suffix.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { NewCustomerComponent } from './component/new-customer/new-customer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NewContactComponent } from './component/new-contact/new-contact.component';
 
 // const data = new InjectionToken<string>("injected data !");
 
@@ -40,6 +41,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NameFixPipe,
     NameSuffixPipe,
     NewCustomerComponent,
+    NewContactComponent,
  
   ],
   imports: [

@@ -1,37 +1,71 @@
 [
-    { "name": "DOTAN", 
-    "email":"dotannnnhhhnnnnn@gmail.com", 
-    "birthday": "2012-01-08T18:25:43-05:00"   ,
+    { 
+      "firstName": "DOTAN",
+      "lastName":"MEZUSHAN" ,
+    "email":"dotannnnhhhnnnnn@gmail.com",
+    "phone":"0545557172" ,
+    "birthday": "2012-01-08T18:25:43-05:00"  ,
+    "address": "tel aviv",
+    "notes":"hello",
     "isGuy":"true"
   },
-  { "name": "THE Q SHIRA", 
-  "email":"SHIRA@gmail.com", 
-  "birthday": "2012-09-21T18:25:43-05:00",
-  "isGuy":"true"
-},
-   { "name": "AVI", 
-    "email":"AVI@gmail.com", 
-    "birthday": "2012-10-29T18:25:43-05:00",
-    "isGuy":"true"
-  },
-  { "name": "LULI", 
-  "email":"LULI@gmail.com", 
-  "birthday": "1999-06-05T18:25:43-05:00",
+  { 
+    "firstName": "NETA",
+    "lastName":"TIM" ,
+  "email":"NETA@gmail.com",
+  "phone":"054333172" ,
+  "birthday": "1991-08-08T18:25:43-05:00"  ,
+  "address": "RAMLE",
+  "notes":"SOME NOTE",
   "isGuy":"false"
+},
+   { 
+    "firstName": "AVI",
+    "lastName":"CHOEN" ,
+  "email":"AVI@gmail.com",
+  "phone":"0506247896" ,
+  "birthday": "1982-12-08T18:25:43-05:00"  ,
+  "address": "HAIFA",
+  "notes":"HELLO FROM HAIFA",
+  "isGuy":"true"
   },
-    { "name": "DANA", 
-    "email":"DANAAA@gmail.com", 
-    "birthday": "1990-06-06T18:25:43-05:00",
-    "isGuy":"false"
+  { 
+    "firstName": "HAGIT",
+    "lastName":"MATALIN" ,
+  "email":"HAGIT@gmail.com",
+  "phone":"0502563495" ,
+  "birthday": "1960-11-01T18:25:43-05:00"  ,
+  "address": "tel aviv",
+  "notes":"hello"
   },
-  { "name": "HELLI", 
-  "email":"H@gmail.com", 
-  "birthday": "1990-03-03T18:25:43-05:00",
+    { 
+      "firstName": "UZUMAKI",
+      "lastName":"NARUTO" ,
+    "email":"NARUTO@gmail.com",
+    "phone":"0502563488" ,
+    "birthday": "2012-01-08T18:25:43-05:00"  ,
+    "address": "JAPAN",
+    "notes":"I AM LIKE GOOD FOOD",
+    "isGuy":"true"
+  },
+  {  
+    "firstName": "YINATA",
+    "lastName":"NARUTO" ,
+  "email":"YINATA@gmail.com",
+  "phone":"0543357172" ,
+  "birthday": "1994-01-08T18:25:43-05:00"  ,
+  "address": "tel aviv",
+  "notes":"hello I AM INATA 🤗",
   "isGuy":"false"
  },
-  { "name": "YRON", 
-  "email":"YRON@gmail.com", 
-  "birthday": "1960-09-16T18:25:43-05:00",
-  "isGuy":"true"
+  { 
+  "firstName": "GAL",
+  "lastName":"GADOT" ,
+  "email":"GAL@gmail.com",
+  "phone":"0547741819" ,
+  "birthday": "1970-12-08T18:25:43-05:00"  ,
+  "address": "HERZELIYA",
+  "notes":"hello I AM WONDER WOMEN"
+  
   }
 ]

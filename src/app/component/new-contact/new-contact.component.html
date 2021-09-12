@@ -1,0 +1,139 @@
+<app-header [headerTitle]="headerTitleParent"
+[headerIcon]="headerIconParent"
+[headerDescription]="headerDescriptionParent"
+></app-header>
+
+<div class="row">
+    <div class="col-12">
+
+        <form #customerForm ="ngForm" 
+            novalidate="novalidate"
+            autocomplete="off"
+            (ngSubmit)="onSubmit(customerForm)"
+        >
+        <div class="row">
+            
+            <div class="col-md-5 mb-3">
+                <label for="Name">
+                    <span class="text-danger" >*</span>
+                Name
+               </label>
+            
+              
+                <input
+                class="form-control "
+                 [ngClass]="{'is-invalid': firstNameField.errors 
+                 && firstNameField.dirty}"
+                 required
+                 minlength="2"
+                 name="name"
+                 id="name"
+                 #firstNameField="ngModel"
+                 [(ngModel)]="name"
+                 type="text"
+                >
+                <div  
+                [hidden]="!firstNameField.errors?.required"
+                class="invalid-feedback">
+                Name is required
+                </div>
+                <div
+                [hidden]="!firstNameField.errors?.minlength"
+                  class="invalid-feedback">
+                  Name min length have to be more than 1 char
+                </div>
+                  
+
+            </div>
+
+           
+
+            <div class="col-md-5 mb-3">
+                <label for="email">
+                    <span class="text-danger" >*</span>
+                Email</label>  
+                <input
+                class="form-control "
+                 [ngClass]="{'is-invalid': emailField.errors 
+                 && emailField.dirty}"
+                 required email
+                 name="email"
+                 id="email"
+                 #emailField="ngModel"
+                 [(ngModel)]="email"
+                 type="email"
+                >
+                <div  
+                [hidden]="!emailField.errors?.required"
+                class="invalid-feedback">
+                email is required
+                </div>
+                <div  
+                [hidden]="!emailField.errors?.email"
+                class="invalid-feedback">
+                email is not email
+                </div>
+
+            </div>
+
+
+            <div class="col-md-5 mb-3">
+                <label for="phones">
+                    <span class="text-danger" >*</span>
+                Phone</label>  
+                <input
+                class="form-control "
+                 [ngClass]="{'is-invalid': phoneField.errors 
+                 && phoneField.dirty}"
+                 required 
+                 pattern="^0[2-9]\d{7,8}$"
+                 name="phone"
+                 id="phone"
+                 #phoneField="ngModel"
+                 [(ngModel)]="phones"
+                 type="tel"
+                >
+                <div  
+                [hidden]="!phoneField.errors?.required"
+                class="invalid-feedback">
+                phone is required
+                </div>
+                <div  
+                [hidden]="!phoneField.errors?.pattern"
+                class="invalid-feedback">
+                phone is not phone
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="row">
+            <div class="col-md-10 mb-3">
+                <label for="customeBirthday">Birthday</label>
+                <input  class="real-date"
+                onfocus="(this.type='date')"
+                placeholder=""
+                name="address"
+                id="customeBirthday"
+                 #birthdayForm="ngModel"
+                 [(ngModel)]="birthday"
+                  class="form-control">
+                </div>
+        </div>
+
+
+         <div class="fixed-button bg-light p-3 text-center">
+             <a href="" routerLink=".." class="btn btn-secondary">Cancel</a>
+             <input
+             [disabled]="customerForm.invalid"
+              class="btn btn-primary" 
+              name="submit" 
+              type="submit" 
+              value="Save"
+              >
+         </div>
+        </form>
+
+    </div>
+</div>

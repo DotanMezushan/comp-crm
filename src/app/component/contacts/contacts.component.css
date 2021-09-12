@@ -1,0 +1,15 @@
+.noPhones{
+    background-color: aqua;
+}
+.onePhone{
+    background-color: rgb(130, 184, 61);
+}
+.moreThanOnePhones{
+    background-color:bisque
+}
+.past{
+    background-color: rgb(248, 173, 87);
+}
+.future{
+    background-color: rgb(248, 87, 101);
+}

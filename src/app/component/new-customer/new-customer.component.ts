@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-new-customer',
@@ -28,12 +29,12 @@ export class NewCustomerComponent implements OnInit {
     this.headerTitleParent ="Add New Customer Form"; 
     this.headerDescriptionParent="Write Customer details";
   }
-  onSubmit($event:any){
-    console.log($event);
-    console.log($event.form.value);
+  onSubmit($formData:any){
+    console.log($formData);
+    console.log($formData.form.value);
+  };
     
-  }
- 
+
   
 
 }
