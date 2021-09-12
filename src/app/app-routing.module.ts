@@ -4,6 +4,7 @@ import { ContactsComponent } from './component/contacts/contacts.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomersComponent } from './component/customers/customers.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { NewCustomerComponent } from './component/new-customer/new-customer.component';
 
 
 
@@ -16,6 +17,10 @@ const appRouter: Routes=[
   { 
     path:'customers', 
     component:CustomersComponent
+  },
+  { 
+    path:'customers/new', 
+    component: NewCustomerComponent
   },
   { 
     path:'contacts', 

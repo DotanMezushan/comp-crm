@@ -1,6 +1,11 @@
 export interface CustomerModel{
-    name: string;
-    birthday: Date;
+    id?: string;
+    firstName: string;
+    lastName: string;
     email: string;
-    isGuy: boolean;
+    phone: string;
+    birthday?: Date;
+    address?: string;
+    notes?: string;
+    isGuy?: boolean;
 }

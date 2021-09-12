@@ -1,0 +1,232 @@
+<app-header [headerTitle]="headerTitleParent"
+[headerIcon]="headerIconParent"
+[headerDescription]="headerDescriptionParent"
+></app-header>
+
+<div class="row">
+    <div class="col-12">
+
+        <form #customerForm ="ngForm" 
+            novalidate="novalidate"
+            autocomplete="off"
+            (ngSubmit)="onSubmit(customerForm)"
+        >
+        <div class="row">
+            
+            <div class="col-md-5 mb-3">
+                <label for="firstName">
+                    <span class="text-danger" >*</span>
+                First Name</label>
+                
+                <!-- touched/ untouched
+                valid/invalid
+                dirty/ pristine -->
+<!-- 
+                <div *ngIf="firstNameField.touched">touched</div>
+                <div *ngIf="firstNameField.untouched">untouched</div>
+                <div *ngIf="firstNameField.valid">valid</div>
+                <div *ngIf="firstNameField.invalid">invalid</div>
+                <div *ngIf="firstNameField.dirty">dirty</div>
+                <div *ngIf="firstNameField.pristine">pristine</div> -->
+              
+                <input
+                class="form-control "
+                 [ngClass]="{'is-invalid': firstNameField.errors 
+                 && firstNameField.dirty}"
+                 required
+                 minlength="2"
+                 name="firstName"
+                 id="firstName"
+                 #firstNameField="ngModel"
+                 [(ngModel)]="firstName"
+                 type="text"
+                >
+                <div  
+                [hidden]="!firstNameField.errors?.required"
+                class="invalid-feedback">
+                First Name is required
+                </div>
+                <div
+                [hidden]="!firstNameField.errors?.minlength"
+                  class="invalid-feedback">
+                  Name min length have to be more than 1 char
+                </div>
+                  
+
+            </div>
+
+            <div class="col-md-5 mb-3">
+                <label for="firstName">
+                    <span class="text-danger" >*</span>
+                Last Name</label>  
+                <input
+                class="form-control "
+                 [ngClass]="{'is-invalid': lastNameField.errors 
+                 && lastNameField.dirty}"
+                 required
+                 minlength="2"
+                 name="lastName"
+                 id="lastName"
+                 #lastNameField="ngModel"
+                 [(ngModel)]="lastName"
+                 type="text"
+                >
+                <div  
+                [hidden]="!lastNameField.errors?.required"
+                class="invalid-feedback">
+                Last Name is required
+                </div>
+                <div
+                [hidden]="!lastNameField.errors?.minlength"
+                  class="invalid-feedback">
+                  Last Name min length have to be more than 1 char
+                </div>
+            </div>
+
+            <div class="col-md-5 mb-3">
+                <label for="email">
+                    <span class="text-danger" >*</span>
+                Email</label>  
+                <input
+                class="form-control "
+                 [ngClass]="{'is-invalid': emailField.errors 
+                 && emailField.dirty}"
+                 required email
+                 name="email"
+                 id="email"
+                 #emailField="ngModel"
+                 [(ngModel)]="email"
+                 type="email"
+                >
+                <div  
+                [hidden]="!emailField.errors?.required"
+                class="invalid-feedback">
+                email is required
+                </div>
+                <div  
+                [hidden]="!emailField.errors?.email"
+                class="invalid-feedback">
+                email is not email
+                </div>
+
+            </div>
+
+
+            <div class="col-md-5 mb-3">
+                <label for="email">
+                    <span class="text-danger" >*</span>
+                Phone</label>  
+                <input
+                class="form-control "
+                 [ngClass]="{'is-invalid': phoneField.errors 
+                 && phoneField.dirty}"
+                 required 
+                 pattern="^0[2-9]\d{7,8}$"
+                 name="phone"
+                 id="phone"
+                 #phoneField="ngModel"
+                 [(ngModel)]="phone"
+                 type="tel"
+                >
+                <div  
+                [hidden]="!phoneField.errors?.required"
+                class="invalid-feedback">
+                phone is required
+                </div>
+                <div  
+                [hidden]="!phoneField.errors?.pattern"
+                class="invalid-feedback">
+                phone is not email phone
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="row">
+            <div class="col-md-10 mb-3">
+                <label for="customeBirthday">Birthday</label>
+                <input  class="real-date"
+                onfocus="(this.type='date')"
+                placeholder=""
+                name="address"
+                id="customeBirthday"
+                 #birthdayForm="ngModel"
+                 [(ngModel)]="birthday"
+                  class="form-control">
+                </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group row col-lg-6">
+                <label class="col-3 col-form-label"  for="customerSxs" >Gender</label>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" 
+                    type="radio"
+                     name="isGuy"
+                      id="male" 
+                      value="true"
+                      #customerSxs="ngModel"
+                      [(ngModel)]="isGuy"
+                      >
+                    <label class="form-check-label" for="customerSxs">Male</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input"
+                     type="radio"
+                      name="isGuy"
+                       id="female"
+                        value="false"
+                        #customerSxs="ngModel"
+                        [(ngModel)]="isGuy"
+                        >
+                    <label class="form-check-label" for="customeSxs">Female</label>
+                  </div>
+              </div>
+            </div>
+          
+
+        <div class="row">
+            <div class="col-md-10 mb-3"><label for="customeAddress">Address</label>
+                <input 
+                type="text"
+                name="address"
+                id="customeAddress"
+                 #addressForm="ngModel"
+                 [(ngModel)]="address"
+                  class="form-control">
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 mb-3"><label for="customeNote">Note</label>
+                <textarea
+                 rows="8" 
+                 cols="30"
+                 type="text"
+                name="note"
+                id="customeNote"
+                #noteForm="ngModel"
+                [(ngModel)]="notes"
+                class="form-control">
+                </textarea>
+                </div>
+        </div>
+
+         <div class="fixed-button bg-light p-3 text-center">
+             <a href="" routerLink=".." class="btn btn-secondary">Cancel</a>
+             <input
+             [disabled]="customerForm.invalid"
+              class="btn btn-primary" 
+              name="submit" 
+              type="submit" 
+              value="Save"
+              >
+         </div>
+        </form>
+
+    </div>
+</div>

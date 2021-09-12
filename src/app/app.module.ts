@@ -12,6 +12,8 @@ import { HeaderComponent } from '../assets/header/header.component';
 import { NameFixPipe } from './pipes/name-fix.pipe';
 import { NameSuffixPipe } from './pipes/name-suffix.pipe';
 import {HttpClientModule} from '@angular/common/http';
+import { NewCustomerComponent } from './component/new-customer/new-customer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // const data = new InjectionToken<string>("injected data !");
 
@@ -37,12 +39,15 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     NameFixPipe,
     NameSuffixPipe,
+    NewCustomerComponent,
  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     // {

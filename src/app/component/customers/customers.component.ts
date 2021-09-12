@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerModel } from 'src/app/model/CustomerModel';
 import { CustomersServicesService } from 'src/app/services/customers-services.service';
-import {Observable} from 'rxjs';
 
 
 @Component({
@@ -49,11 +48,6 @@ export class CustomersComponent implements OnInit {
     let dateAsDate=new Date(dateAsNumber)
     console.log("i am new Date");
     console.log(dateAsDate);
-
- 
-
-    
-   
     
       if( dateAsDate.getMonth()!==currentDate.getMonth())
       return dateAsDate.getMonth() < currentDate.getMonth();
