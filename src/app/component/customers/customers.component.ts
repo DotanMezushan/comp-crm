@@ -23,7 +23,7 @@ export class CustomersComponent implements OnInit {
     ngOnInit(): void {
       this.headerIconParent="fas fa-user";
       this.headerTitleParent ="headerTitle from customers";
-      this.headerDescriptionParent="i am headerDescriptionParent from customers";
+      this.headerDescriptionParent="i am header DescriptionParent from customers";
 
       this.customerServiceService.Customers.subscribe( {
         next: (result : CustomerModel[]) => {

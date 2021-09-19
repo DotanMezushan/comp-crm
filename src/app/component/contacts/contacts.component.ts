@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observer } from 'rxjs';
 import { ContactModel } from 'src/app/model/Contact';
 import { ContactsServiceService } from 'src/app/services/contacts-service.service';
 

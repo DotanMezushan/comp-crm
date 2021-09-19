@@ -18,9 +18,9 @@ export class NewContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.headerIconParent="fas fa-plus-circle";
-    this.headerTitleParent ="Add New Contact Form"; 
-    this.headerDescriptionParent="Write Contact details";
+    this.headerIconParent="fas fa-plus";
+    this.headerTitleParent ="new  contacts";
+    this.headerDescriptionParent="add new  contacts";
 
  
   
