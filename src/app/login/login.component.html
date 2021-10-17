@@ -1,0 +1,62 @@
+
+<div class="row">
+  <div class="col-2"></div>
+    <div class="col-4">
+      <form #loginForm = "ngForm"
+        (ngSubmit)="onSubmit(loginForm)"
+        novalidate="novalidate"
+        autocomplete= "off"
+        >
+        <div class="text-center mb-4">
+          <h1 class="h3 mt-b font-weight-normal">COMPANY <i class="fas fa-angle-double-up text-success"></i> CRM</h1>
+          <p>Login with your account</p>
+        </div>
+        <div class="form-group mb-4">
+          <div *ngIf="error" class="alert alert-danger alert-danger" role="alert" >
+            {{error}}
+          </div>
+          <div class="form-group">
+            <input type="email"
+
+              placeholder="Email"
+              text-align: center
+              id= "email"
+              class="form-control"
+              name="email"
+              #emailNg="ngModel"
+              [(ngModel)]="email"
+              [ngClass]="{'is-invalid' : emailNg.errors && emailNg.touched }"
+              required
+              email
+            />
+            <div [hidden]="!emailNg.errors?.required" class="invalid-feedback">Any email is required</div>
+            <div [hidden]="!emailNg.errors?.email" class="invalid-feedback">A valid email is required</div>
+          </div>
+      </div>
+
+      <div class="form-group mb-4">
+          <input type="password"
+            placeholder="Password"
+            id= "password"
+            class="form-control"
+            name="password"
+            #passwordNg="ngModel"
+            [(ngModel)]="password"
+            [ngClass]="{'is-invalid' : passwordNg.errors && passwordNg.touched }"
+            required
+            password
+          />
+          <div [hidden]="!passwordNg.errors?.required" class="invalid-feedback">Password is required</div>
+        </div>
+        <button
+        [disabled]="loginForm.form.invalid"
+        class="btn btn-lg btn-primary btn-block"
+        type="submit"
+        >Sing in</button>
+        <p class="mt-4 mb-3 text-muted text-center" ><small>&copy; 2021 -2050</small></p>
+
+
+
+  </form>
+  </div>
+</div>

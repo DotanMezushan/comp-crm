@@ -1,0 +1,124 @@
+<app-header
+[headerIcon]="headerIconParent"
+[headerTitle]="headerTitleParent"
+[headerDescription]="headerDescriptionParent"
+></app-header>
+
+
+<div class="row">
+    <div  class="col-3">
+        <strong>Search by phone</strong>
+        <input
+        #searchByPhone
+        type="text"
+        class="form-control"
+        placeholder="Enter phone"
+    >
+    </div>
+
+    <div  class="col-3">
+      <strong>Search  by email</strong>
+      <input
+      #searchByEmail
+      type="text"
+      class="form-control"
+      placeholder="Enter email"
+  >
+  </div>
+
+  <div  class="col-3">
+    <strong>Search  by name</strong>
+    <input
+    #searchByName
+    type="text"
+    class="form-control"
+    placeholder="Enter name"
+>
+</div>
+
+<div class="col-3">
+  <div class="float-right">
+    <a href=""
+     routerLink="/customers/new"
+     class="btn btn-primary">
+        Add New Customer
+      <i class="fas fa-plus-circle"></i>
+    </a>
+  </div>
+</div>
+
+
+</div>
+
+
+<div class="row mt-3">
+<div class="col" *ngIf ="CustomersArrFiltered " >
+<table  class="table table-border" class="table table-info"
+ *ngIf="CustomersArrFiltered.length; else noCustomers" >
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Is Guy</th>
+            <th scope="col">Notes</th>
+            <th scope="col">Birth Day</th>
+            <th scope="col">Phone</th>
+            <th>Delete</th>
+            <th>Edit</th>
+            <th>Info</th>
+
+        </tr>
+
+    </thead>
+        <tbody>
+
+            <tr [ngClass]="{'odd':isOdd,'even': isEven}"
+            *ngFor=
+             "let customer of CustomersArrFiltered;
+             even as isEven;
+             odd as isOdd" >
+                <td>{{customer.firstName |nameFix |nameSuffix:customer.isGuy |uppercase}}
+                    {{customer.lastName |nameFix  |uppercase}}
+                </td>
+                <td >{{customer.email}}</td>
+                <td>{{customer.isGuy }}</td>
+                <td>{{customer.notes}}</td>
+                <div  *ngIf="customer.birthday">
+                <td  [ngClass]="{
+                    'past': isAlreadyHaveBirthdayThisYear(customer.birthday),
+                    'future': !isAlreadyHaveBirthdayThisYear(customer.birthday)
+                }">{{customer.birthday |date :'MM/yyyy'}}</td>
+                </div>
+                <div  *ngIf="!customer.birthday">
+                    <td>
+                        No data
+                    </td>
+                </div>
+                <td>{{customer.phone}}</td>
+                <td>
+
+                    <button (click)="onDeleteCustomer(customer)"
+                    type="button" class="btn btn-outline-dark">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                 </td>
+                <td><a type="button" href="#" routerLink="/customers/{{customer.id}}/edit"
+                    class="btn btn-outline-dark" >
+                 <i class="fas fa-edit"></i> </a> </td>
+
+                 <td><a type="button" href="#" routerLink="/customers/{{customer.id}}/index"
+                    class="btn btn-outline-dark" >
+                 <i class="fas fa-info-circle"></i> </a> </td>
+
+
+
+
+
+
+            </tr>
+        </tbody>
+</table>
+
+<ng-template #noCustomers>No Customers</ng-template>
+</div>
+</div>

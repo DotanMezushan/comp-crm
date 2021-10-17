@@ -1,0 +1,41 @@
+
+<nav *ngIf="isLoading"  class="navbar navbar-expand-md navbar-dark bg-white fixed-top shadow-sm">
+    <a href="#" class="navbar-brand text-success">
+      Company <i class="fas fa-angle-double-up"></i> CRM
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExampleDefault"
+      aria-controls="navbarExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-success"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarExampleDefault">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item">
+          <span class="badge badge-pill badge-primary">3 New leads inbox</span>
+          <span class="badge badge-pill badge-danger ml-3">1 meating </span>
+          <span class="badge badge-pill badge-warning ml-3">10 open issues</span>
+        </li>
+      </ul>
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item dropdown">
+          <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown01"
+            class="nav-link dropdown-toggle text-success">
+            {{userEmail}}
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-cog"></i>
+              My Preferences
+            </a>
+            <a  (click)="logOut()"  href="#" class="dropdown-item">
+              <i class="fas fa-cog"></i>
+              Sign Out
+            </a>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+

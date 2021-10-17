@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
-import { CustomerModel } from '../model/CustomerModel';
+import { Customer } from '../model/Customer';
 
 
 
@@ -12,8 +12,8 @@ export class CustomersServicesService {
 
   constructor(private http: HttpClient) { }
   
-  public get  Customers() :Observable<CustomerModel[]> {
-    const rtn =this.http.get("../../assets/data/customers.json") as Observable<CustomerModel[]>;
+  public get  Customers() :Observable<Customer[]> {
+    const rtn =this.http.get("../../assets/data/customers.json") as Observable<Customer[]>;
     return rtn;
    }
 }

@@ -8,9 +8,15 @@ export class NameSuffixPipe implements PipeTransform {
   transform(value: string, args?: boolean): string {
     const MR:string = "MR";
     const Miss:string = "Miss";
-    if(args===undefined) {return value}
+    
+    if(args===undefined ||args ===null) {return value}
+    if(args === true) {
+      return `MR ${value}`    }
+    else{
+      return `Miss ${value}`
+    }
 
-    return `${args? MR : Miss } ${value} `;
+    
   }
 
 }
